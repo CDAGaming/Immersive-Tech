@@ -1,9 +1,5 @@
 package ferro2000.immersivetech.client;
 
-import java.util.Locale;
-
-import javax.annotation.Nonnull;
-
 import blusunrize.immersiveengineering.api.ManualHelper;
 import blusunrize.immersiveengineering.api.ManualPageMultiblock;
 import blusunrize.immersiveengineering.client.ClientUtils;
@@ -17,12 +13,7 @@ import ferro2000.immersivetech.client.render.TileRenderSteamTurbine;
 import ferro2000.immersivetech.common.CommonProxy;
 import ferro2000.immersivetech.common.ITContent;
 import ferro2000.immersivetech.common.blocks.BlockITFluid;
-import ferro2000.immersivetech.common.blocks.metal.multiblocks.MultiblockAlternator;
-import ferro2000.immersivetech.common.blocks.metal.multiblocks.MultiblockBoiler;
-import ferro2000.immersivetech.common.blocks.metal.multiblocks.MultiblockDistiller;
-import ferro2000.immersivetech.common.blocks.metal.multiblocks.MultiblockSolarReflector;
-import ferro2000.immersivetech.common.blocks.metal.multiblocks.MultiblockSolarTower;
-import ferro2000.immersivetech.common.blocks.metal.multiblocks.MultiblockSteamTurbine;
+import ferro2000.immersivetech.common.blocks.metal.multiblocks.*;
 import ferro2000.immersivetech.common.blocks.metal.tileentities.TileEntitySteamTurbine;
 import ferro2000.immersivetech.common.blocks.metal.types.BlockType_Connectors;
 import ferro2000.immersivetech.common.items.ItemITBase;
@@ -47,6 +38,9 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
+
+import javax.annotation.Nonnull;
+import java.util.Locale;
 
 @Mod.EventBusSubscriber(Side.CLIENT)
 public class ClientProxy extends CommonProxy{

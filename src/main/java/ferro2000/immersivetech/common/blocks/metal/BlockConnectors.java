@@ -1,7 +1,5 @@
 package ferro2000.immersivetech.common.blocks.metal;
 
-import java.util.Arrays;
-
 import blusunrize.immersiveengineering.api.IEProperties;
 import blusunrize.immersiveengineering.api.energy.wires.TileEntityImmersiveConnectable;
 import blusunrize.immersiveengineering.client.models.IOBJModelCallback;
@@ -24,6 +22,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.property.ExtendedBlockState;
 import net.minecraftforge.common.property.IExtendedBlockState;
 import net.minecraftforge.common.property.IUnlistedProperty;
+
+import java.util.Arrays;
 
 public class BlockConnectors extends BlockITTileProvider<BlockType_Connectors> {
 	

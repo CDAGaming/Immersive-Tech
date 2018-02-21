@@ -1,9 +1,9 @@
 package ferro2000.immersivetech.common.blocks.metal.types;
 
-import java.util.Locale;
-
 import ferro2000.immersivetech.common.blocks.BlockITBase;
 import net.minecraft.util.IStringSerializable;
+
+import java.util.Locale;
 
 public enum BlockType_MetalMultiblock implements IStringSerializable, BlockITBase.IBlockEnum{
 	

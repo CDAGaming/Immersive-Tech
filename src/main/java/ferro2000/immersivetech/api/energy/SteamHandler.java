@@ -1,14 +1,12 @@
 package ferro2000.immersivetech.api.energy;
 
+import blusunrize.immersiveengineering.api.ApiUtils;
+import net.minecraftforge.fluids.Fluid;
+
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Set;
-
-import blusunrize.immersiveengineering.api.ApiUtils;
-
 import java.util.Map;
-
-import net.minecraftforge.fluids.Fluid;
+import java.util.Set;
 
 public class SteamHandler {
 

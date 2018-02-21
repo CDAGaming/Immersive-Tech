@@ -1,7 +1,5 @@
 package ferro2000.immersivetech.common;
 
-import javax.annotation.Nonnull;
-
 import blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces.IGuiTile;
 import ferro2000.immersivetech.ImmersiveTech;
 import ferro2000.immersivetech.api.ITLib;
@@ -22,6 +20,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
+
+import javax.annotation.Nonnull;
 
 public class CommonProxy implements IGuiHandler {
 	

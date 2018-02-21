@@ -1,15 +1,8 @@
 package ferro2000.immersivetech.common.blocks;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
-
-import com.google.common.collect.Sets;
-
 import blusunrize.immersiveengineering.api.Lib;
 import blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces.IIEMetaBlock;
+import com.google.common.collect.Sets;
 import ferro2000.immersivetech.ImmersiveTech;
 import ferro2000.immersivetech.common.ITContent;
 import net.minecraft.block.Block;
@@ -37,6 +30,8 @@ import net.minecraftforge.common.property.ExtendedBlockState;
 import net.minecraftforge.common.property.IUnlistedProperty;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.*;
 
 /**
  * @author BluSunrize

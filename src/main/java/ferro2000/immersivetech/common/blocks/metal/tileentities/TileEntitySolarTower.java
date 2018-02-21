@@ -1,15 +1,11 @@
 package ferro2000.immersivetech.common.blocks.metal.tileentities;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.google.common.collect.Lists;
-
 import blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces.IAdvancedCollisionBounds;
 import blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces.IAdvancedSelectionBounds;
 import blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces.IGuiTile;
 import blusunrize.immersiveengineering.common.blocks.metal.TileEntityMultiblockMetal;
 import blusunrize.immersiveengineering.common.util.Utils;
+import com.google.common.collect.Lists;
 import ferro2000.immersivetech.api.ITLib;
 import ferro2000.immersivetech.api.craftings.SolarTowerRecipes;
 import ferro2000.immersivetech.common.blocks.metal.multiblocks.MultiblockSolarTower;
@@ -29,6 +25,9 @@ import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.IFluidTank;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.oredict.OreDictionary;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TileEntitySolarTower extends TileEntityMultiblockMetal<TileEntitySolarTower, SolarTowerRecipes> implements IGuiTile, IAdvancedSelectionBounds,IAdvancedCollisionBounds {
 

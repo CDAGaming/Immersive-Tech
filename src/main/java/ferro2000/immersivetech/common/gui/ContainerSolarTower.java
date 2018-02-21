@@ -1,9 +1,7 @@
 package ferro2000.immersivetech.common.gui;
 
-import blusunrize.immersiveengineering.api.crafting.RefineryRecipe;
 import blusunrize.immersiveengineering.common.gui.ContainerIEBase;
 import blusunrize.immersiveengineering.common.gui.IESlot;
-import ferro2000.immersivetech.api.craftings.SolarTowerRecipes;
 import ferro2000.immersivetech.common.blocks.metal.tileentities.TileEntitySolarTower;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;

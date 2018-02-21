@@ -1,18 +1,8 @@
 package ferro2000.immersivetech.client.connectors;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.function.Function;
-
+import blusunrize.immersiveengineering.client.models.smart.ConnModelReal;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
-import blusunrize.immersiveengineering.client.models.smart.ConnModelReal;
 import ferro2000.immersivetech.ImmersiveTech;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
@@ -24,6 +14,10 @@ import net.minecraftforge.client.model.IModel;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.client.model.obj.OBJModel;
 import net.minecraftforge.common.model.IModelState;
+
+import java.io.IOException;
+import java.util.*;
+import java.util.function.Function;
 
 public class ITConnLoader implements ICustomModelLoader
 {

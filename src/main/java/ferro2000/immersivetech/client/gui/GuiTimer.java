@@ -1,11 +1,8 @@
 package ferro2000.immersivetech.client.gui;
 
-import org.lwjgl.opengl.GL11;
-
 import blusunrize.immersiveengineering.client.ClientUtils;
 import blusunrize.immersiveengineering.client.gui.GuiIEContainerBase;
 import blusunrize.immersiveengineering.client.gui.elements.GuiButtonIE;
-import blusunrize.immersiveengineering.client.gui.elements.GuiButtonState;
 import ferro2000.immersivetech.ImmersiveTech;
 import ferro2000.immersivetech.common.blocks.metal.tileentities.TileEntityTimer;
 import ferro2000.immersivetech.common.gui.ContainerTimer;
@@ -13,6 +10,7 @@ import ferro2000.immersivetech.common.network.TileMessage;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.nbt.NBTTagCompound;
+import org.lwjgl.opengl.GL11;
 
 public class GuiTimer extends GuiIEContainerBase {
 

@@ -1,15 +1,14 @@
 package ferro2000.immersivetech.client.gui;
 
-import java.util.ArrayList;
-
-import org.lwjgl.opengl.GL11;
-
 import blusunrize.immersiveengineering.client.ClientUtils;
 import ferro2000.immersivetech.common.blocks.metal.tileentities.TileEntitySolarTower;
 import ferro2000.immersivetech.common.gui.ContainerSolarTower;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.entity.player.InventoryPlayer;
+import org.lwjgl.opengl.GL11;
+
+import java.util.ArrayList;
 
 public class GuiSolarTower extends GuiContainer {
 	

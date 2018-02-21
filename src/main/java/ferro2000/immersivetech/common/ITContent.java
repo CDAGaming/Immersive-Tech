@@ -1,7 +1,5 @@
 package ferro2000.immersivetech.common;
 
-import java.util.ArrayList;
-
 import blusunrize.immersiveengineering.api.MultiblockHandler;
 import blusunrize.immersiveengineering.api.crafting.MixerRecipe;
 import ferro2000.immersivetech.ImmersiveTech;
@@ -13,19 +11,8 @@ import ferro2000.immersivetech.common.blocks.BlockITBase;
 import ferro2000.immersivetech.common.blocks.BlockITFluid;
 import ferro2000.immersivetech.common.blocks.metal.BlockConnectors;
 import ferro2000.immersivetech.common.blocks.metal.BlockMetalMultiblock;
-import ferro2000.immersivetech.common.blocks.metal.multiblocks.MultiblockAlternator;
-import ferro2000.immersivetech.common.blocks.metal.multiblocks.MultiblockBoiler;
-import ferro2000.immersivetech.common.blocks.metal.multiblocks.MultiblockDistiller;
-import ferro2000.immersivetech.common.blocks.metal.multiblocks.MultiblockSolarReflector;
-import ferro2000.immersivetech.common.blocks.metal.multiblocks.MultiblockSolarTower;
-import ferro2000.immersivetech.common.blocks.metal.multiblocks.MultiblockSteamTurbine;
-import ferro2000.immersivetech.common.blocks.metal.tileentities.TileEntityAlternator;
-import ferro2000.immersivetech.common.blocks.metal.tileentities.TileEntityBoiler;
-import ferro2000.immersivetech.common.blocks.metal.tileentities.TileEntityDistiller;
-import ferro2000.immersivetech.common.blocks.metal.tileentities.TileEntitySolarReflector;
-import ferro2000.immersivetech.common.blocks.metal.tileentities.TileEntitySolarTower;
-import ferro2000.immersivetech.common.blocks.metal.tileentities.TileEntitySteamTurbine;
-import ferro2000.immersivetech.common.blocks.metal.tileentities.TileEntityTimer;
+import ferro2000.immersivetech.common.blocks.metal.multiblocks.*;
+import ferro2000.immersivetech.common.blocks.metal.tileentities.*;
 import ferro2000.immersivetech.common.items.ItemITBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -42,6 +29,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
+
+import java.util.ArrayList;
 
 @Mod.EventBusSubscriber(modid=ImmersiveTech.MODID)
 public class ITContent {

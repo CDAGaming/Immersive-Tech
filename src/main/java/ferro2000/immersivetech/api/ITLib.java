@@ -1,7 +1,5 @@
 package ferro2000.immersivetech.api;
 
-import net.minecraft.util.EnumFacing;
-
 public class ITLib {
 	
 	//GUI ID
