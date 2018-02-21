@@ -64,20 +64,18 @@ public class BlockITBase<E extends Enum<E> & BlockITBase.IBlockEnum> extends Blo
 		this.hasFlavour = new boolean[this.enumValues.length];
 		this.metaRenderLayers = new Set[this.enumValues.length];
 
-		ArrayList<IProperty> propList = new ArrayList<IProperty>();
-		ArrayList<IUnlistedProperty> unlistedPropList = new ArrayList<IUnlistedProperty>();
+		ArrayList<IProperty> propList = new ArrayList<>();
+		ArrayList<IUnlistedProperty> unlistedPropList = new ArrayList<>();
 		for(Object o : additionalProperties)
 		{
 			if(o instanceof IProperty)
 				propList.add((IProperty)o);
 			if(o instanceof IProperty[])
-				for(IProperty p : ((IProperty[])o))
-					propList.add(p);
+				Collections.addAll(propList, ((IProperty[]) o));
 			if(o instanceof IUnlistedProperty)
 				unlistedPropList.add((IUnlistedProperty)o);
 			if(o instanceof IUnlistedProperty[])
-				for(IUnlistedProperty p : ((IUnlistedProperty[])o))
-					unlistedPropList.add(p);
+				Collections.addAll(unlistedPropList, ((IUnlistedProperty[]) o));
 		}
 		this.additionalProperties = propList.toArray(new IProperty[propList.size()]);
 		this.additionalUnlistedProperties = unlistedPropList.toArray(new IUnlistedProperty[unlistedPropList.size()]);
@@ -149,21 +147,19 @@ public class BlockITBase<E extends Enum<E> & BlockITBase.IBlockEnum> extends Blo
 
 	protected static Material setTempProperties(Material material, PropertyEnum<?> property, Object... additionalProperties)
 	{
-		ArrayList<IProperty> propList = new ArrayList<IProperty>();
-		ArrayList<IUnlistedProperty> unlistedPropList = new ArrayList<IUnlistedProperty>();
+		ArrayList<IProperty> propList = new ArrayList<>();
+		ArrayList<IUnlistedProperty> unlistedPropList = new ArrayList<>();
 		propList.add(property);
 		for(Object o : additionalProperties)
 		{
 			if(o instanceof IProperty)
 				propList.add((IProperty)o);
 			if(o instanceof IProperty[])
-				for(IProperty p : ((IProperty[])o))
-					propList.add(p);
+				Collections.addAll(propList, ((IProperty[]) o));
 			if(o instanceof IUnlistedProperty)
 				unlistedPropList.add((IUnlistedProperty)o);
 			if(o instanceof IUnlistedProperty[])
-				for(IUnlistedProperty p : ((IUnlistedProperty[])o))
-					unlistedPropList.add(p);
+				Collections.addAll(unlistedPropList, ((IUnlistedProperty[]) o));
 		}
 		tempProperties = propList.toArray(new IProperty[propList.size()]);
 		tempUnlistedProperties = unlistedPropList.toArray(new IUnlistedProperty[unlistedPropList.size()]);
@@ -172,10 +168,8 @@ public class BlockITBase<E extends Enum<E> & BlockITBase.IBlockEnum> extends Blo
 	protected static Object[] combineProperties(Object[] currentProperties, Object... addedProperties)
 	{
 		Object[] array = new Object[currentProperties.length + addedProperties.length];
-		for(int i=0; i<currentProperties.length; i++)
-			array[i] = currentProperties[i];
-		for(int i=0; i<addedProperties.length; i++)
-			array[currentProperties.length+i] = addedProperties[i];
+		System.arraycopy(currentProperties, 0, array, 0, currentProperties.length);
+		System.arraycopy(addedProperties, 0, array, currentProperties.length, addedProperties.length);
 		return array;
 	}
 
@@ -321,8 +315,7 @@ public class BlockITBase<E extends Enum<E> & BlockITBase.IBlockEnum> extends Blo
 	{
 		IProperty[] array = new IProperty[1+this.additionalProperties.length];
 		array[0] = this.property;
-		for(int i=0; i<this.additionalProperties.length; i++)
-			array[1+i] = this.additionalProperties[i];
+		System.arraycopy(this.additionalProperties, 0, array, 1, this.additionalProperties.length);
 		if(this.additionalUnlistedProperties.length>0)
 			return new ExtendedBlockState(this, array, additionalUnlistedProperties);
 		return new BlockStateContainer(this, array);
@@ -330,9 +323,9 @@ public class BlockITBase<E extends Enum<E> & BlockITBase.IBlockEnum> extends Blo
 	protected IBlockState getInitDefaultState()
 	{
 		IBlockState state = this.blockState.getBaseState().withProperty(this.property, enumValues[0]);
-		for(int i=0; i<this.additionalProperties.length; i++)
-			if(this.additionalProperties[i]!=null && !this.additionalProperties[i].getAllowedValues().isEmpty())
-				state = applyProperty(state, additionalProperties[i], additionalProperties[i].getAllowedValues().iterator().next());
+		for (IProperty additionalProperty : this.additionalProperties)
+			if (additionalProperty != null && !additionalProperty.getAllowedValues().isEmpty())
+				state = applyProperty(state, additionalProperty, additionalProperty.getAllowedValues().iterator().next());
 		return state;
 	}
 
@@ -373,18 +366,18 @@ public class BlockITBase<E extends Enum<E> & BlockITBase.IBlockEnum> extends Blo
 	@Override
 	public IBlockState getActualState(IBlockState state, IBlockAccess world, BlockPos pos)
 	{
-		for(int i=0; i<this.additionalProperties.length; i++)
-			if(this.additionalProperties[i]!=null && !this.additionalProperties[i].getAllowedValues().isEmpty())
-				state = applyProperty(state, this.additionalProperties[i], this.additionalProperties[i].getAllowedValues().toArray()[0]);
+		for (IProperty additionalProperty : this.additionalProperties)
+			if (additionalProperty != null && !additionalProperty.getAllowedValues().isEmpty())
+				state = applyProperty(state, additionalProperty, additionalProperty.getAllowedValues().toArray()[0]);
 		return state;
 	}
 	@Override
 	public IBlockState getStateFromMeta(int meta)
 	{
 		IBlockState state = this.getDefaultState().withProperty(this.property, fromMeta(meta));
-		for(int i=0; i<this.additionalProperties.length; i++)
-			if(this.additionalProperties[i]!=null && !this.additionalProperties[i].getAllowedValues().isEmpty())
-				state = applyProperty(state, this.additionalProperties[i], this.additionalProperties[i].getAllowedValues().toArray()[0]);
+		for (IProperty additionalProperty : this.additionalProperties)
+			if (additionalProperty != null && !additionalProperty.getAllowedValues().isEmpty())
+				state = applyProperty(state, additionalProperty, additionalProperty.getAllowedValues().toArray()[0]);
 		return state;
 		//		return this.getDefaultState().withProperty(this.property, fromMeta(meta));
 	}

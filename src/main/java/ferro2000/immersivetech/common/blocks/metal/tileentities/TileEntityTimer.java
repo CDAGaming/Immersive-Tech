@@ -121,13 +121,9 @@ public class TileEntityTimer extends TileEntityConnectorRedstone implements IGui
 	private boolean stopTimer(BlockPos pos) {
 		
 		EnumFacing f = facing==EnumFacing.SOUTH? EnumFacing.UP : facing==EnumFacing.NORTH? EnumFacing.DOWN : facing==EnumFacing.WEST? EnumFacing.NORTH : EnumFacing.SOUTH;
-		
-		if(world.isSidePowered(pos, f)) {
-			return true;
-		}
-		
-		return false;
-		
+
+		return world.isSidePowered(pos, f);
+
 	}
 
 	@Override

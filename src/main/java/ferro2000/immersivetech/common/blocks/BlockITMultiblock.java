@@ -55,7 +55,7 @@ public abstract class BlockITMultiblock<E extends Enum<E> & BlockITBase.IBlockEn
 	@Override
 	public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
 	{
-		return new ArrayList<ItemStack>();
+		return new ArrayList<>();
 	}
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)

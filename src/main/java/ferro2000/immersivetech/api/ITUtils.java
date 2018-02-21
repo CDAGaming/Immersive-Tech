@@ -37,12 +37,8 @@ public class ITUtils {
 				EnumFacing inputFacing = ((IMechanicalEnergy) tile).getMechanicalEnergyInputFacing();
 				BlockPos pos = startPos.offset(inputFacing, ((IMechanicalEnergy) tile).inputToCenterDistance()+1);
 				TileEntity tileTransmitter = world.getTileEntity(pos);
-				
-				if(tileTransmitter instanceof IMechanicalEnergy && ((IMechanicalEnergy) tileTransmitter).isMechanicalEnergyTransmitter() && (((IMechanicalEnergy) tileTransmitter).getMechanicalEnergyOutputFacing() == inputFacing.getOpposite())) {
-					
-					return true;
-					
-				}
+
+				return tileTransmitter instanceof IMechanicalEnergy && ((IMechanicalEnergy) tileTransmitter).isMechanicalEnergyTransmitter() && (((IMechanicalEnergy) tileTransmitter).getMechanicalEnergyOutputFacing() == inputFacing.getOpposite());
 				
 			}
 			
@@ -63,12 +59,8 @@ public class ITUtils {
 				EnumFacing outputFacing = ((IMechanicalEnergy) tile).getMechanicalEnergyOutputFacing();
 				BlockPos pos = startPos.offset(outputFacing, ((IMechanicalEnergy) tile).outputToCenterDistance()+1);
 				TileEntity tileReceiver = world.getTileEntity(pos);
-				
-				if(tileReceiver instanceof IMechanicalEnergy && ((IMechanicalEnergy) tileReceiver).isMechanicalEnergyReceiver() && ((IMechanicalEnergy) tileReceiver).getMechanicalEnergyInputFacing() == outputFacing.getOpposite()) {
-					
-					return true;
-					
-				}
+
+				return tileReceiver instanceof IMechanicalEnergy && ((IMechanicalEnergy) tileReceiver).isMechanicalEnergyReceiver() && ((IMechanicalEnergy) tileReceiver).getMechanicalEnergyInputFacing() == outputFacing.getOpposite();
 				
 			}
 			
@@ -103,12 +95,8 @@ public class ITUtils {
 		TileEntity tileReceiver = world.getTileEntity(pos.offset(outputFacing, ((IMechanicalEnergy) tileInfo).inputToCenterDistance()));
 		
 		if(tileReceiver instanceof TileEntityAlternator) {
-			
-			if(((TileEntityAlternator) tileReceiver).canRunMechanicalEnergy()){
-				
-				return true;
-				
-			}
+
+			return ((TileEntityAlternator) tileReceiver).canRunMechanicalEnergy();
 			
 		}
 		

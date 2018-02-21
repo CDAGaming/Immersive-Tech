@@ -100,7 +100,7 @@ public class TileEntitySolarTower extends TileEntityMultiblockMetal<TileEntitySo
 					
 					if(this.processTime>30) {
 						this.processTime = 0;
-						MultiblockProcessInMachine<SolarTowerRecipes> process = new MultiblockProcessInMachine(recipe).setInputTanks(new int[] {0});
+						MultiblockProcessInMachine<SolarTowerRecipes> process = new MultiblockProcessInMachine(recipe).setInputTanks(0);
 						if(this.addProcessToQueue(process, true))
 						{
 							this.addProcessToQueue(process, false);

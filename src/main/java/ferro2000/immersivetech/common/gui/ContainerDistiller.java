@@ -27,9 +27,7 @@ public class ContainerDistiller extends ContainerIEBase<TileEntityDistiller> {
 				FluidStack fs = h.getTankProperties()[0].getContents();
 				if(fs==null)
 					return false;
-				if(tileF.tanks[0].getFluidAmount()>0&&!fs.isFluidEqual(tileF.tanks[0].getFluid()))
-					return false;
-				return true;
+				return tileF.tanks[0].getFluidAmount() <= 0 || fs.isFluidEqual(tileF.tanks[0].getFluid());
 			}
 		});
 		this.addSlotToContainer(new IESlot.Output(this, this.inv, 1, 26,53));

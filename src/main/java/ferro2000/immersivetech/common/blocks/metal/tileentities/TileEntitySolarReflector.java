@@ -32,11 +32,7 @@ public class TileEntitySolarReflector extends TileEntityMultiblockPart<TileEntit
 	@Override
 	public void update() {
 		if(!world.isRemote && formed && pos==10) {
-			if(canSeeSun() && world.isDaytime()) {
-				this.sun = true;
-			}else {
-				this.sun = false;
-			}
+			this.sun = canSeeSun() && world.isDaytime();
 		}
 	}
 	

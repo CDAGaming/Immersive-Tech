@@ -97,15 +97,9 @@ public class TileEntityAlternator extends TileEntityMultiblockPart<TileEntityAlt
 	}
 	
 	public boolean canRunMechanicalEnergy() {
-		
-		if(energyStorage.getEnergyStored() < energyStorage.getMaxEnergyStored()) {
-			
-			return true;
-			
-		}
-		
-		return false;
-		
+
+		return energyStorage.getEnergyStored() < energyStorage.getMaxEnergyStored();
+
 	}
 	
 	@Override

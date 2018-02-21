@@ -29,7 +29,7 @@ public class DistillerRecipes extends MultiblockRecipe {
 		this.totalProcessEnergy = (int)Math.floor(energy*energyModifier);
 		this.totalProcessTime = (int)Math.floor(time*timeModifier);
 
-		this.chance = chance;
+		DistillerRecipes.chance = chance;
 		
 		this.fluidInputList = Lists.newArrayList(this.input);
 		this.fluidOutputList = Lists.newArrayList(this.fluidOutput);

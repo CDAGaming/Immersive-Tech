@@ -64,7 +64,7 @@ public class Config {
 		DistillerRecipes.timeModifier = ITConfig.Machines.distiller_timeModifier;
 		DistillerRecipes.energyModifier = ITConfig.Machines.distiller_energyModifier;
 		
-		BoilerRecipes.timeModifier = ITConfig.machines.boiler_timeModifier;
+		BoilerRecipes.timeModifier = ITConfig.Machines.boiler_timeModifier;
 		
 		TileEntitySolarTower.range = ITConfig.Machines.solarTower_range;
 		

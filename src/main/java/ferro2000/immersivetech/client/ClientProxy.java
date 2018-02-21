@@ -75,14 +75,7 @@ public class ClientProxy extends CommonProxy{
 				IIEMetaBlock ieMetaBlock = (IIEMetaBlock)block;
 				if(ieMetaBlock.useCustomStateMapper())
 					ModelLoader.setCustomStateMapper(block, IECustomStateMapper.getStateMapper(ieMetaBlock));
-				ModelLoader.setCustomMeshDefinition(blockItem, new ItemMeshDefinition()
-				{
-					@Override
-					public ModelResourceLocation getModelLocation(ItemStack stack)
-					{
-						return new ModelResourceLocation(loc, "inventory");
-					}
-				});
+				ModelLoader.setCustomMeshDefinition(blockItem, stack -> new ModelResourceLocation(loc, "inventory"));
 				for(int meta = 0; meta < ieMetaBlock.getMetaEnums().length; meta++)
 				{
 					String location = loc.toString();
@@ -128,28 +121,14 @@ public class ClientProxy extends CommonProxy{
 				{
 					final ResourceLocation loc = new ResourceLocation(ImmersiveTech.MODID, ipMetaItem.itemName);
 					ModelBakery.registerItemVariants(ipMetaItem, loc);
-					ModelLoader.setCustomMeshDefinition(ipMetaItem, new ItemMeshDefinition()
-					{
-						@Override
-						public ModelResourceLocation getModelLocation(ItemStack stack)
-						{
-							return new ModelResourceLocation(loc, "inventory");
-						}
-					});
+					ModelLoader.setCustomMeshDefinition(ipMetaItem, stack -> new ModelResourceLocation(loc, "inventory"));
 				}
 			} 
 			else
 			{
 				final ResourceLocation loc = Item.REGISTRY.getNameForObject(item);
 				ModelBakery.registerItemVariants(item, loc);
-				ModelLoader.setCustomMeshDefinition(item, new ItemMeshDefinition()
-				{
-					@Override
-					public ModelResourceLocation getModelLocation(ItemStack stack)
-					{
-						return new ModelResourceLocation(loc, "inventory");
-					}
-				});
+				ModelLoader.setCustomMeshDefinition(item, stack -> new ModelResourceLocation(loc, "inventory"));
 			}
 		}
 		
